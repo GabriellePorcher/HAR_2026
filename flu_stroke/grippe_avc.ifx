@@ -1,0 +1,233 @@
+idefix "v1.0"
+
+ds_model:
+  observations:
+    - PA_tres_elevee
+    - obnubile
+    - GSC_moyen
+    - sat_baisse
+    - marbrures
+    - not_marbrures
+    - test_pupilles
+    - pupilles_normales
+    - GCS_nul
+    - antibiotiques
+    - antibiotiques
+    - antibiotiques
+    - dexamethasone
+    - test_pupilles
+    - dexamethasone
+    - grippe_pos
+    - tamiflu
+    - noradrénaline
+    - scanner_thoracique
+    - PL_neg
+    - grippe_seule
+    - hospitalise
+    - echo_pulmonaire
+    - condensation
+    - grippe_seule
+    - tamiflu
+    - flagi
+    - mydriase
+    - scanner_injecte
+    - FC_normal
+    - sat_bas
+    - temp_elevee
+    - toux
+    - cephalee
+    - scanner_SI_normal
+    - amlodipine
+    - cholesetrol_eleve
+    - fumeur
+    - desoriente
+    - GB_normaux
+    - GR_elevee
+    - prot_normale
+    - glycorachie_normale
+    - immobilite_gauche
+
+
+
+
+  diseases:
+    - meningite
+    - grippe
+    - avc
+    - grippe_avc
+    - autre
+
+  masses:
+    - [obnubile] -> {
+        - [meningite, avc, grippe_avc] : 0.7
+        - [grippe] : 0.1
+        - _uncertain_ : _catch_
+      }
+    - [GSC_moyen] -> {
+        - [meningite, avc, grippe_avc] : 0.7
+        - avc : 0.1
+        - _uncertain_ : _catch_
+      }
+    - [PA_tres_elevee] -> {
+        - [avc, grippe_avc] : 0.2
+        - avc : 0.3
+        - _uncertain_ : _catch_
+      }
+    - [FC_normal] -> {
+        - _uncertain_ : _catch_
+      }
+    - [sat_bas] -> {
+        - [grippe] : 0.2
+        - [grippe, grippe_avc] : 0.3
+        - _uncertain_ : _catch_
+      }
+    - [temp_elevee] -> {
+        - [grippe, meningite] : 0.2
+        - [grippe, grippe_avc, meningite] : 0.6
+        - _uncertain_ : _catch_
+      }
+    - [toux] -> {
+        - [grippe] : 0.1
+        - [grippe, grippe_avc] : 0.8
+        - _uncertain_ : _catch_
+      }
+    - [cephalee] -> {
+        - [meningite] : 0.2
+        - [grippe, grippe_avc, meningite] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [scanner_SI_normal] -> {
+        - [grippe, meningite] : 0.2
+        - _uncertain_ : _catch_
+      }
+    - [amlodipine, PA_tres_elevee] -> {
+        - avc : 0.2
+        - [avc, grippe_avc] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [cholesetrol_eleve] -> {
+        - avc : 0.2
+        - [avc, grippe_avc] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [fumeur] -> {
+        - [grippe] : 0.1
+        - avc : 0.2
+        - [grippe, grippe_avc, avc] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [desoriente] -> {
+        - [meningite, avc] : 0.6
+        - _uncertain_ : _catch_
+      }
+    - [sat_baisse] -> {
+        - [grippe] : 0.2
+        - [avc] : 0.1
+        - _uncertain_ : _catch_
+      }
+    - [GCS_nul] -> {
+        - [meningite, avc, grippe_avc] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [grippe_pos] -> {
+        - [grippe] : 0.2
+        - [grippe, grippe_avc] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [GB_normaux] -> {
+        - _uncertain_ : _catch_
+      }
+    - [GR_elevee] -> {
+        - _uncertain_ : _catch_
+      }
+    - [prot_normale] -> {
+        - _uncertain_ : _catch_
+      }
+    - [glycorachie_normale] -> {
+        - _uncertain_ : _catch_
+      }
+    - [mydriase] -> {
+        - [avc] : 0.2
+        - [avc, grippe_avc] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [immobilite_gauche] -> {
+        - [avc] : 0.2
+        - [avc, grippe_avc] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [not_marbrures] -> {
+        - [avc, grippe, grippe_avc] : 0.4
+        - _uncertain_ : _catch_
+      }
+    - [pupilles_normales] -> {
+        - [meningite, grippe] : 0.5
+        - _uncertain_ : _catch_
+      }
+    - [PL_neg] -> {
+        - [avc, grippe, grippe_avc] : 0.9
+        - _uncertain_ : _catch_
+      }
+
+behavior:
+    hierarchy:
+        - maladie : [infection_bacterienne, avc]
+        - infection_bacterienne : [meningite, grippe, infection_pulmonaire]
+        - infection_pulmonaire : [*]
+
+
+    rules:
+        - meningite --(0.6)-> marbrures
+        - [avc, grippe_avc] --(0.9)-> test_pupilles
+        - [infection_bacterienne, grippe_avc] --(0.8)-> antibiotiques
+        - meningite --(0.8)-> dexamethasone
+        - [grippe, grippe_avc] --(0.6)-> tamiflu
+        - meningite --(0.7)-> noradrénaline
+        - infection_pulmonaire --(0.8)-> scanner_thoracique
+        - infection_pulmonaire --(0.8)-> echo_pulmonaire
+        - infection_pulmonaire --(0.8)-> condensation
+        - grippe --(0.8)-> grippe_seule
+        - infection_pulmonaire --(0.6)-> flagi
+        - [avc, grippe_avc] --(0.9)-> scanner_injecte
+
+scenario:
+  00:00:00 : PA_tres_elevee
+  00:02:00 : obnubile
+  00:03:00 : GSC_moyen
+  00:04:00 : sat_baisse
+  00:05:00 : marbrures
+  00:06:00 : not_marbrures
+  00:07:00 : test_pupilles
+  00:08:00 : pupilles_normales
+  00:09:00 : GCS_nul
+  00:10:00 : antibiotiques
+  00:11:00 : antibiotiques
+  00:12:00 : antibiotiques
+  00:13:00 : dexamethasone
+  00:14:00 : test_pupilles
+  00:15:00 : dexamethasone
+  00:16:00 : grippe_pos
+  00:17:00 : tamiflu
+  00:18:00 : noradrénaline
+  00:19:00 : scanner_thoracique
+  00:20:00 : PL_neg
+  00:21:00 : grippe_seule
+  00:22:00 : hospitalise
+  00:23:00 : echo_pulmonaire
+  00:24:00 : condensation
+  00:25:00 : grippe_seule
+  00:26:00 : tamiflu
+  00:27:00 : flagi
+  00:28:00 : mydriase
+  00:29:00 : scanner_injecte
+
+record:
+  - meningite
+  - grippe
+  - avc
+  - grippe_avc
+  - [meningite, grippe_avc, avc]
+  - [grippe, grippe_avc]
+
+no_action_threshold: 0.2
+do_action_threshold: 0.7

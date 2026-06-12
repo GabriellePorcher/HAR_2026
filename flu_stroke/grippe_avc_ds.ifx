@@ -1,0 +1,152 @@
+idefix "v1.0"
+
+ds_model:
+  observations:
+    - very_high_blood_pressure
+    - obtunded
+    - moderate_GCS
+    - dropping_saturation
+    - mottling
+    - no_mottling
+    - pupil_test
+    - normal_pupils
+    - GCS_zero
+    - antibiotics
+    - antibiotics
+    - antibiotics
+    - dexamethasone
+    - pupil_test
+    - dexamethasone
+    - positive_flu_test
+    - tamiflu
+    - norepinephrine
+    - chest_CT_scan
+    - negative_lumbar_puncture
+    - flu_only
+    - hospitalized
+    - lung_ultrasound
+    - consolidation
+    - flu_only
+    - tamiflu
+    - flagyl
+    - mydriasis
+    - contrast_CT_scan
+    - normal_heart_rate
+    - low_saturation
+    - high_temperature
+    - cough
+    - headache
+    - normal_head_CT_scan
+    - amlodipine
+    - elevated_cholesterol
+    - smoker
+    - disoriented
+    - normal_white_blood_cells
+    - elevated_red_blood_cells
+    - normal_protein
+    - normal_glucose_in_CSF
+    - left_side_immobility
+
+
+  diseases:
+    - meningitis
+    - flu
+    - stroke
+    - flu_stroke
+
+  masses:
+    - [obtunded] -> {
+        - [meningitis, stroke, flu_stroke] : 0.4
+        - _uncertain_ : _catch_
+      }
+    - [moderate_GCS] -> {
+        - [meningitis, stroke, flu_stroke] : 0.5
+        - _uncertain_ : _catch_
+      }
+    - [very_high_blood_pressure] -> {
+        - [stroke, flu_stroke] : 0.5
+        - _uncertain_ : _catch_
+      }
+    - [normal_heart_rate] -> {
+        - _uncertain_ : _catch_
+      }
+    - [low_saturation] -> {
+        - [flu, flu_stroke] : 0.1
+        - _uncertain_ : _catch_
+      }
+    - [high_temperature] -> {
+        - [flu, flu_stroke, meningitis] : 0.5
+        - _uncertain_ : _catch_
+      }
+    - [cough] -> {
+        - [flu, flu_stroke] : 0.2
+        - _uncertain_ : _catch_
+      }
+    - [headache] -> {
+        - [flu, flu_stroke, meningitis] : 0.3
+        - _uncertain_ : _catch_
+      }
+    - [normal_head_CT_scan] -> {
+        - [flu, meningitis] : 0.8
+        - _uncertain_ : _catch_
+      }
+    - [amlodipine, very_high_blood_pressure] -> {
+        - [stroke, flu_stroke] : 0.2
+        - _uncertain_ : _catch_
+      }
+    - [elevated_cholesterol] -> {
+        - [stroke, flu_stroke] : 0.2
+        - _uncertain_ : _catch_
+      }
+    - [smoker] -> {
+        - [flu, flu_stroke, stroke] : 0.1
+        - _uncertain_ : _catch_
+      }
+    - [disoriented] -> {
+        - [meningitis, stroke, flu_stroke] : 0.4
+        - _uncertain_ : _catch_
+      }
+    - [dropping_saturation] -> {
+        - [flu, flu_stroke] : 0.1
+        - _uncertain_ : _catch_
+      }
+    - [GCS_zero] -> {
+        - [meningitis, stroke, flu_stroke] : 0.5
+        - _uncertain_ : _catch_
+      }
+    - [positive_flu_test] -> {
+        - [flu, flu_stroke] : 0.95
+        - _uncertain_ : _catch_
+      }
+    - [normal_white_blood_cells] -> {
+        - _uncertain_ : _catch_
+      }
+    - [elevated_red_blood_cells] -> {
+        - _uncertain_ : _catch_
+      }
+    - [normal_protein] -> {
+        - _uncertain_ : _catch_
+      }
+    - [normal_glucose_in_CSF] -> {
+        - _uncertain_ : _catch_
+      }
+    - [mydriasis] -> {
+        - [stroke, flu_stroke] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [left_side_immobility] -> {
+        - [stroke, flu_stroke] : 0.7
+        - _uncertain_ : _catch_
+      }
+    - [no_mottling] -> {
+        - [stroke, flu, flu_stroke] : 0.3
+        - _uncertain_ : _catch_
+      }
+    - [normal_pupils] -> {
+        - [meningitis, flu] : 0.2
+        - _uncertain_ : _catch_
+      }
+    - [negative_lumbar_puncture] -> {
+        - [stroke, flu, flu_stroke] : 0.9
+        - _uncertain_ : _catch_
+      }

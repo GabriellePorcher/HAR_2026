@@ -1,0 +1,237 @@
+// Demster-Shafer model for the pneumonia diagnosis
+
+idefix "v1.0"
+ds_model:
+  observations:
+    - flu_like_syndrome
+    - productive_cough
+    - dry_cough
+    - worsening_cough
+    - high_fever
+    - chills
+    - exertional_dyspnea
+    - asthenia
+    - vomiting
+    - diarrhea
+    - no_recent_travel
+    - no_known_exposure
+    - act_examination
+    - altered_general_condition
+    - tachypnea
+    - normal_oxygen_saturation
+    - crackles
+    - act_biological_workup
+    - elevated_CRP
+    - normal_leukocytes
+    - hypokalemia
+    - act_blood_gas_analysis
+    - respiratory_alkalosis
+    - mild_hypoxemia
+    - act_chest_CT_scan
+    - tree_in_bud_pattern
+    - ground_glass_opacities
+    - act_IV_co_amoxicillin
+    - persistent_fever
+    - act_covid_test
+    - negative_covid_test
+    - act_anticovid_treatment
+    - act_covid_test
+    - act_CT_scan
+    - second_negative_covid_test
+    - act_multiplex_PCR
+    - mycoplasma_pneumoniae
+    - act_stop_anticovid_treatment
+    - act_clarithromycin
+    - clinical_improvement
+    - altered_general_condition
+
+  
+  diseases:
+    - typical_pneumo
+    - atypical_pneumo
+    - flu
+    - covid
+
+  masses:
+    - [flu_like_syndrome] -> {
+        - [typical_pneumo] : 0.05
+        - [atypical_pneumo] : 0.15
+        - [flu] : 0.4
+        - [covid] : 0.3
+        - [typical_pneumo, atypical_pneumo, flu, covid] : 0.1
+      }
+    - [productive_cough] -> {
+        - [typical_pneumo] : 0.15
+        - [atypical_pneumo] : 0.2
+        - [flu] : 0.1
+        - [covid] : 0.3
+        - _uncertain_ : 0.25
+      }
+    - [dry_cough] -> {
+        - [typical_pneumo] : 0.05
+        - [atypical_pneumo] : 0.2
+        - [flu] : 0.15
+        - [covid] : 0.4
+        - _uncertain_ : 0.2
+      }
+    - worsening_cough -> {
+        - typical_pneumo : 0.25
+        - atypical_pneumo : 0.2
+        - flu : 0.15
+        - covid : 0.3
+        - _uncertain_ : _catch_
+      }
+    - high_fever -> {
+        - typical_pneumo : 0.3
+        - atypical_pneumo : 0.2
+        - flu : 0.2
+        - covid : 0.2
+        - _uncertain_ : _catch_
+      }
+    - chills -> {
+        - typical_pneumo : 0.3
+        - atypical_pneumo : 0.2
+        - flu : 0.3
+        - covid : 0.1
+        - _uncertain_ : _catch_
+      }
+    - exertional_dyspnea -> {
+        - typical_pneumo : 0.4
+        - atypical_pneumo : 0.3
+        - flu : 0.1
+        - covid : 0.1
+        - _uncertain_ : _catch_
+      }
+    - asthenia -> {
+        - typical_pneumo : 0.05
+        - atypical_pneumo : 0.15
+        - flu : 0.3
+        - covid : 0.4
+        - _uncertain_ : _catch_
+      }
+    - vomiting -> {
+        - typical_pneumo : 0.05
+        - atypical_pneumo : 0.1
+        - flu : 0.2
+        - covid : 0.3
+        - _uncertain_ : _catch_
+      }
+    - diarrhea -> {
+        - typical_pneumo : 0.05
+        - atypical_pneumo : 0.1
+        - flu : 0.15
+        - covid : 0.3
+        - _uncertain_ : _catch_
+      }
+    - no_recent_travel -> {
+        - typical_pneumo : 0.2
+        - atypical_pneumo : 0.1
+        - flu : 0.3
+        - covid : 0.1
+        - _uncertain_ : _catch_
+      }
+    - altered_general_condition -> {
+        - typical_pneumo : 0.3
+        - atypical_pneumo : 0.2
+        - flu : 0.2
+        - covid : 0.1
+        - _uncertain_ : _catch_
+      }
+    - tachypnea -> {
+        - typical_pneumo : 0.3
+        - atypical_pneumo : 0.2
+        - flu : 0.1
+        - covid : 0.3
+        - _uncertain_ : _catch_
+      }
+    - normal_oxygen_saturation -> {
+        - typical_pneumo : 0.05
+        - atypical_pneumo : 0.15
+        - flu : 0.3
+        - covid : 0.4
+        - _uncertain_ : _catch_
+      }
+    - crackles -> {
+        - typical_pneumo : 0.3
+        - atypical_pneumo : 0.3
+        - flu : 0.1
+        - covid : 0.2
+        - _uncertain_ : _catch_
+      }
+    - elevated_CRP -> {
+        - typical_pneumo : 0.4
+        - atypical_pneumo : 0.2
+        - flu : 0.1
+        - covid : 0.2
+        - _uncertain_ : _catch_
+      }
+    - normal_leukocytes -> {
+        - typical_pneumo : 0.05
+        - atypical_pneumo : 0.45
+        - flu : 0.2
+        - covid : 0.2
+        - _uncertain_ : _catch_
+      }
+    - hypokalemia -> {
+        - typical_pneumo : 0.05
+        - atypical_pneumo : 0.6
+        - flu : 0.15
+        - covid : 0.1
+        - _uncertain_ : _catch_
+      }
+    - respiratory_alkalosis -> {
+        - typical_pneumo : 0.1
+        - atypical_pneumo : 0.5
+        - flu : 0.2
+        - covid : 0.1
+        - _uncertain_ : _catch_
+      }
+    - mild_hypoxemia -> {
+        - typical_pneumo : 0.3
+        - atypical_pneumo : 0.3
+        - flu : 0.1
+        - covid : 0.1
+        - _uncertain_ : _catch_
+      }
+    - tree_in_bud_pattern -> {
+        - typical_pneumo : 0.2
+        - atypical_pneumo : 0.6
+        - flu : 0.05
+        - covid : 0.05
+        - _uncertain_ : _catch_
+      }
+    - ground_glass_opacities -> {
+        - typical_pneumo : 0.1
+        - atypical_pneumo : 0.4
+        - flu : 0.05
+        - covid : 0.35
+        - _uncertain_ : _catch_
+      }
+    - act_IV_co_amoxicillin -> {
+        - typical_pneumo : 0.05
+        - atypical_pneumo : 0.7
+        - flu : 0.05
+        - covid : 0.05
+        - _uncertain_ : _catch_
+      }
+    - negative_covid_test -> {
+        - typical_pneumo : 0.3
+        - atypical_pneumo : 0.3
+        - flu : 0.3
+        - covid : 0.05
+        - _uncertain_ : _catch_
+      }
+    - mycoplasma_pneumoniae -> {
+        - typical_pneumo : 0.0
+        - atypical_pneumo : 0.95
+        - flu : 0.0
+        - covid : 0.0
+        - _uncertain_ : _catch_
+      }
+    - [act_clarithromycin, clinical_improvement] -> {
+        - typical_pneumo : 0.05
+        - atypical_pneumo : 0.9
+        - flu : 0.0
+        - covid : 0.0
+        - _uncertain_ : _catch_
+      }

@@ -1,0 +1,393 @@
+Time: 0001-01-01 00:00:00
+{'fumeur', 'toux', 'PA_tres_elevee', 'sat_bas', 'scanner_SI_normal', 'GSC_moyen', 'cephalee', 'cholesetrol_eleve', 'temp_elevee', 'FC_normal', 'obnubile'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.08  0.08  0.17  0.27
+autre     : 0.00  0.00  0.00  0.01
+grippe_avc: 0.24  0.24  0.34  0.45
+meningite : 0.33  0.33  0.45  0.59
+conflict = 0.04
+
+Alert: {'antibiotiques'} should be performed
+
+Time: 0001-01-01 00:04:00
+{'sat_baisse'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.09  0.09  0.18  0.28
+autre     : 0.00  0.00  0.00  0.01
+grippe_avc: 0.27  0.27  0.36  0.47
+meningite : 0.31  0.31  0.42  0.55
+conflict = 0.03
+
+Alert: {'antibiotiques'} should be performed
+
+Time: 0001-01-01 00:05:00
+{'marbrures'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.09  0.09  0.18  0.28
+autre     : 0.00  0.00  0.00  0.01
+grippe_avc: 0.27  0.27  0.36  0.47
+meningite : 0.31  0.31  0.42  0.55
+conflict = 0.03
+
+Alert: {'antibiotiques'} should be performed
+
+Time: 0001-01-01 00:06:00
+{'not_marbrures'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.12
+grippe    : 0.15  0.15  0.22  0.31
+autre     : 0.00  0.00  0.00  0.01
+grippe_avc: 0.31  0.31  0.40  0.52
+meningite : 0.24  0.24  0.32  0.42
+conflict = 0.09
+
+Alert: {'antibiotiques'} should be performed
+
+Time: 0001-01-01 00:07:00
+{'test_pupilles'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.12
+grippe    : 0.15  0.15  0.22  0.31
+autre     : 0.00  0.00  0.00  0.01
+grippe_avc: 0.31  0.31  0.40  0.52
+meningite : 0.24  0.24  0.32  0.42
+conflict = 0.09
+
+Alert: {'antibiotiques'} should be performed
+
+Time: 0001-01-01 00:08:00
+{'pupilles_normales'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.04  0.10
+grippe    : 0.17  0.17  0.25  0.34
+autre     : 0.00  0.00  0.00  0.01
+grippe_avc: 0.27  0.27  0.35  0.45
+meningite : 0.27  0.27  0.36  0.46
+conflict = 0.08
+
+Alert: {'antibiotiques'} should be performed
+
+Time: 0001-01-01 00:09:00
+{'GCS_nul'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.09  0.09  0.13  0.18
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.31  0.31  0.39  0.49
+meningite : 0.36  0.36  0.42  0.50
+conflict = 0.08
+
+Alert: {'antibiotiques'} should be performed
+
+Time: 0001-01-01 00:10:00
+{'antibiotiques'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.09  0.09  0.13  0.18
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.31  0.31  0.39  0.49
+meningite : 0.36  0.36  0.42  0.50
+conflict = 0.08
+
+
+Time: 0001-01-01 00:11:00
+{'antibiotiques'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.09  0.09  0.13  0.18
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.31  0.31  0.39  0.49
+meningite : 0.36  0.36  0.42  0.50
+conflict = 0.08
+
+
+Time: 0001-01-01 00:12:00
+{'antibiotiques'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.09  0.09  0.13  0.18
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.31  0.31  0.39  0.49
+meningite : 0.36  0.36  0.42  0.50
+conflict = 0.08
+
+
+Time: 0001-01-01 00:13:00
+{'dexamethasone'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.09  0.09  0.13  0.18
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.31  0.31  0.39  0.49
+meningite : 0.36  0.36  0.42  0.50
+conflict = 0.08
+
+
+Time: 0001-01-01 00:14:00
+{'test_pupilles'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.09  0.09  0.13  0.18
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.31  0.31  0.39  0.49
+meningite : 0.36  0.36  0.42  0.50
+conflict = 0.08
+
+
+Time: 0001-01-01 00:15:00
+{'dexamethasone'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.05  0.11
+grippe    : 0.09  0.09  0.13  0.18
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.31  0.31  0.39  0.49
+meningite : 0.36  0.36  0.42  0.50
+conflict = 0.08
+
+
+Time: 0001-01-01 00:16:00
+{'grippe_pos'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.23  0.23  0.25  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.68  0.68  0.71  0.74
+meningite : 0.03  0.03  0.03  0.04
+conflict = 0.34
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:17:00
+{'tamiflu'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.23  0.23  0.25  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.68  0.68  0.71  0.74
+meningite : 0.03  0.03  0.03  0.04
+conflict = 0.34
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:18:00
+{'noradrénaline'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.23  0.23  0.25  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.68  0.68  0.71  0.74
+meningite : 0.03  0.03  0.03  0.04
+conflict = 0.34
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:19:00
+{'scanner_thoracique'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.23  0.23  0.25  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.68  0.68  0.71  0.74
+meningite : 0.03  0.03  0.03  0.04
+conflict = 0.34
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:20:00
+{'PL_neg'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.24  0.24  0.26  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.70  0.70  0.73  0.76
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.02
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:21:00
+{'grippe_seule'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.24  0.24  0.26  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.70  0.70  0.73  0.76
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.02
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'grippe_seule'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:22:00
+{'hospitalise'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.24  0.24  0.26  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.70  0.70  0.73  0.76
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.02
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'grippe_seule'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:23:00
+{'echo_pulmonaire'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.24  0.24  0.26  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.70  0.70  0.73  0.76
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.02
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'echo_pulmonaire'} should not have been performed
+Alert: {'grippe_seule'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:24:00
+{'condensation'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.24  0.24  0.26  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.70  0.70  0.73  0.76
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.02
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'echo_pulmonaire'} should not have been performed
+Alert: {'condensation'} should not have been performed
+Alert: {'grippe_seule'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:25:00
+{'grippe_seule'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.24  0.24  0.26  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.70  0.70  0.73  0.76
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.02
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'echo_pulmonaire'} should not have been performed
+Alert: {'condensation'} should not have been performed
+Alert: {'grippe_seule'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:26:00
+{'tamiflu'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.24  0.24  0.26  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.70  0.70  0.73  0.76
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.02
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'echo_pulmonaire'} should not have been performed
+Alert: {'condensation'} should not have been performed
+Alert: {'grippe_seule'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:27:00
+{'flagi'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.00  0.01
+grippe    : 0.24  0.24  0.26  0.28
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.70  0.70  0.73  0.76
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.02
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'echo_pulmonaire'} should not have been performed
+Alert: {'condensation'} should not have been performed
+Alert: {'grippe_seule'} should not have been performed
+Alert: {'flagi'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:28:00
+{'mydriase'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.01  0.01
+grippe    : 0.09  0.09  0.09  0.10
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.89  0.89  0.90  0.91
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.17
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'echo_pulmonaire'} should not have been performed
+Alert: {'condensation'} should not have been performed
+Alert: {'grippe_seule'} should not have been performed
+Alert: {'flagi'} should not have been performed
+Alert: {'scanner_injecte'} should be performed
+
+Time: 0001-01-01 00:29:00
+{'scanner_injecte'}
+            mass  bel   prob  plaus
+avc       : 0.00  0.00  0.01  0.01
+grippe    : 0.09  0.09  0.09  0.10
+autre     : 0.00  0.00  0.00  0.00
+grippe_avc: 0.89  0.89  0.90  0.91
+meningite : 0.00  0.00  0.00  0.00
+conflict = 0.17
+
+Alert: {'marbrures'} should not have been performed
+Alert: {'dexamethasone'} should not have been performed
+Alert: {'noradrénaline'} should not have been performed
+Alert: {'scanner_thoracique'} should not have been performed
+Alert: {'echo_pulmonaire'} should not have been performed
+Alert: {'condensation'} should not have been performed
+Alert: {'grippe_seule'} should not have been performed
+Alert: {'flagi'} should not have been performed
+

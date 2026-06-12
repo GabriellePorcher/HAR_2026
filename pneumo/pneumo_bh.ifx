@@ -1,0 +1,24 @@
+// Behavioral model for the pneumonia diagnosis
+idefix "v1.0"
+import "pneumo_ds.ifx"
+
+behavior:
+    hierarchy:
+        - lung_issue : [infectious, non_infectious]
+        - infectious : [viral, bacterian]
+        - viral : [covid, flu]
+        - bacterian : [typical_pneumo, atypical_pneumo]
+        - non_infectious : [*]
+
+    rules:
+        - lung_issue --(0.8)-> act_examination
+        - infectious --(0.9)-> act_biological_workup
+        - lung_issue --(0.85)-> act_blood_gas_analysis
+        - lung_issue --(0.7)-> act_chest_CT_scan
+        // Typical pneumonia requires co-amoxicilline
+        - typical_pneumo --(0.9)-> act_IV_co_amoxicillin
+        - covid --(0.95)-> act_covid_test
+        - covid --(0.8)-> act_anticovid_treatment
+        // Atypical pneumo requires clarithromycine
+        - atypical_pneumo --(0.9)-> act_clarithromycin
+        - [typical_pneumo, atypical_pneumo] --(0.9)-> [act_clarithromycin, act_IV_co_amoxicillin]

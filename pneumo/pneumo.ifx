@@ -1,0 +1,5 @@
+idefix "v1.0"
+    import "pneumo_ds.ifx"
+    import "pneumo_bh.ifx"
+    import "pneumo_sc.ifx"
+ 

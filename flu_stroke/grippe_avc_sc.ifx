@@ -1,0 +1,52 @@
+idefix "v1.0"
+
+import "grippe_avc_ds.ifx"
+import "grippe_avc_bh.ifx"
+
+scenario:
+  00:00:00 : obtunded
+  00:00:00 : moderate_GCS
+  00:00:00 : normal_heart_rate
+  00:00:00 : very_high_blood_pressure
+  00:00:00 : low_saturation
+  00:00:00 : high_temperature
+  00:00:00 : cough
+  00:00:00 : headache
+  00:00:00 : normal_head_CT_scan
+  00:00:00 : elevated_cholesterol
+  00:00:00 : smoker
+  00:04:00 : dropping_saturation
+  00:05:00 : mottling
+  00:06:00 : no_mottling
+  00:07:00 : pupil_test
+  00:08:00 : normal_pupils
+  00:09:00 : GCS_zero
+  00:10:00 : antibiotics
+  00:11:00 : antibiotics
+  00:12:00 : antibiotics
+  00:13:00 : dexamethasone
+  00:14:00 : pupil_test
+  00:15:00 : dexamethasone
+  00:16:00 : positive_flu_test
+  00:17:00 : tamiflu
+  00:18:00 : norepinephrine
+  00:19:00 : chest_CT_scan
+  00:20:00 : negative_lumbar_puncture
+  00:21:00 : flu_only
+  00:22:00 : hospitalized
+  00:23:00 : lung_ultrasound
+  00:24:00 : consolidation
+  00:25:00 : flu_only
+  00:26:00 : tamiflu
+  00:27:00 : flagyl
+  00:28:00 : mydriasis
+  00:29:00 : contrast_CT_scan
+
+record:
+  - meningitis
+  - flu
+  - stroke
+  - flu_stroke
+
+no_action_threshold: 0.3
+do_action_threshold: 0.7

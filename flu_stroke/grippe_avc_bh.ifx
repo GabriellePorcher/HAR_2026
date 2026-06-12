@@ -1,0 +1,25 @@
+// Behavioral model for the pneumonia diagnosis
+idefix "v1.0"
+
+import "grippe_avc_ds.ifx"
+
+behavior:
+    hierarchy:
+        - disease: [bacterial_infection, flu, stroke]
+        - bacterial_infection: [meningitis, lung_infection]
+        - lung_infection: [*]
+
+
+    rules:
+        - meningitis --(0.6)-> mottling
+        - [stroke, flu_stroke] --(0.9)-> pupil_test
+        - [bacterial_infection, flu_stroke] --(0.8)-> antibiotics
+        - meningitis --(0.8)-> dexamethasone
+        - [flu, flu_stroke] --(0.6)-> tamiflu
+        - meningitis --(0.7)-> norepinephrine
+        - lung_infection --(0.8)-> chest_CT_scan
+        - lung_infection --(0.8)-> lung_ultrasound
+        - lung_infection --(0.8)-> consolidation
+        - flu --(0.8)-> flu_only
+        - lung_infection --(0.6)-> flagyl
+        - [stroke, flu_stroke] --(0.9)-> contrast_CT_scan

@@ -1,0 +1,61 @@
+// Scenario for pneumonia diagnosis
+
+idefix "v1.0"
+
+// Import the Demster-Shafer model
+import "pneumo_ds.ifx"
+// Import the behavioral model
+import "pneumo_bh.ifx"
+
+scenario:
+  0001-01-01T00:00:00 : flu_like_syndrome
+  00:00:00 : productive_cough
+  00:00:00 : dry_cough
+  00:00:00 : worsening_cough
+  00:00:00 : high_fever
+  00:00:00 : chills
+  00:00:00 : exertional_dyspnea
+  00:00:00 : asthenia
+  00:00:00 : vomiting
+  00:00:00 : diarrhea
+  00:00:00 : no_recent_travel
+  00:00:00 : no_known_exposure
+  00:01:00 : act_examination
+  00:02:00 : altered_general_condition
+  00:02:00 : high_fever
+  00:02:00 : tachypnea
+  00:02:00 : normal_oxygen_saturation
+  00:02:00 : crackles
+  00:03:00 : act_biological_workup
+  00:04:00 : elevated_CRP
+  00:04:00 : normal_leukocytes
+  00:04:00 : hypokalemia
+  00:05:00 : act_blood_gas_analysis
+  00:06:00 : respiratory_alkalosis
+  00:06:00 : mild_hypoxemia
+  00:07:00 : act_chest_CT_scan
+  00:08:00 : tree_in_bud_pattern
+  00:08:00 : ground_glass_opacities
+  00:09:00 : act_IV_co_amoxicillin
+  00:10:00 : persistent_fever
+  00:11:00 : act_covid_test
+  00:12:00 : negative_covid_test
+  00:13:00 : act_anticovid_treatment
+  00:14:00 : act_covid_test
+  00:15:00 : second_negative_covid_test
+  00:16:00 : act_multiplex_PCR
+  00:17:00 : mycoplasma_pneumoniae
+  00:18:00 : act_stop_anticovid_treatment
+  00:19:00 : act_clarithromycin
+  00:20:00 : clinical_improvement
+  
+
+record:
+  - typical_pneumo
+  - atypical_pneumo
+  - flu
+  - covid
+  - [typical_pneumo, atypical_pneumo, flu, covid]
+
+no_action_threshold: 0.2
+do_action_threshold: 0.7
